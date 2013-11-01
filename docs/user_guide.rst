@@ -267,7 +267,7 @@ Delete backup older than the given string interval, like 1M for 1 month and so o
 Backup rotation
 ---------------
 
-If you make automated with baktaht, it makes sense to rotate your backups.
+If you make automated with bakthat, it makes sense to rotate your backups.
 
 Bakthat allows you to rotate backups using `Grandfather-father-son backup rotation <http://en.wikipedia.org/wiki/Backup_rotation_scheme#Grandfather-father-son>`_, you can set a default rotation configuration.
 
@@ -421,13 +421,13 @@ Here is a example of data stored in the SQLite database:
      u'stored_filename': u'mydir.20130305193615.tgz.enc',
      u'tags': []}
 
-All the keys are explicit, except **backend_hash**, which is the hash of your AWS access key concatenated with either the S3 bucket, either the Glacier vault. This key is used when syncing backups with multiple servers.
+All the keys are explicit, except **backend_hash**, which is the hash of your AWS access key concatenated with either the S3 bucket or the Glacier vault. This key is used when syncing backups with multiple servers.
 
 
 Backup/Restore Glacier inventory
 --------------------------------
 
-Bakthat automatically backups the local Glacier inventory (a dict with filename => archive_id mapping) to your S3 bucket under the "bakthat_glacier_inventory" key.
+Bakthat automatically backs up the local Glacier inventory (a dict with filename => archive_id mapping) to your S3 bucket under the "bakthat_glacier_inventory" key.
 
 You can retrieve bakthat custom inventory without waiting:
 
@@ -441,7 +441,7 @@ or
 
     $ bakthat show_local_glacier_inventory
 
-You can trigger a backup mannualy:
+You can trigger a backup manually:
 
 ::
 
